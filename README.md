@@ -1,83 +1,82 @@
-# 📊 Telco Customer Churn Analysis & Prediction
+# Telco Customer Churn Prediction – README
 
-## 🧠 Overview
-This project analyzes customer churn behavior using the Telco dataset and builds predictive models to identify at-risk customers. It also estimates potential savings from retention efforts and provides actionable business recommendations.
+## 🔍 Project Overview
 
-## 📁 Dataset
-- **Source**: `Telco_Customer_Churn_Dataset (3).csv`
-- **Records**: 7,043 customers
-- **Features**: 21 columns including demographics, service usage, contract details, and churn status
+This project analyzes customer churn using the Telco Customer Churn dataset. It includes data cleaning, exploratory analysis, segmentation, predictive modeling, and business impact estimation. The goal is to identify churn drivers and recommend retention strategies.
 
-## 🔧 Project Workflow
+## 📂 Dataset
 
-### 1. Data Preparation
-- Cleaned whitespace, handled missing values, and converted `TotalCharges` to float
-- Imputed missing values with median
-- Removed duplicates and standardized formats
+- Source: Telco_Customer_Churn_Dataset (3).csv
+- Rows: 7,043 | Columns: 21
+- Target: Churn (Yes/No)
 
-### 2. Feature Engineering
-- Created `TenureGroup` bins
-- Label encoded binary features
-- One-hot encoded categorical variables
-- Added `EstimatedSavings` based on Monthly and Total Charges
+## 🧼 Data Preparation
 
-### 3. Exploratory Data Analysis (EDA)
-- Visualized churn distribution across:
-  - Gender, SeniorCitizen status
-  - Tenure, MonthlyCharges, TotalCharges
-  - Contract type and PaymentMethod
+- Stripped whitespace and handled missing values.
+- Converted `TotalCharges` to float and imputed missing values with median.
+- Created `TenureGroup` bins.
+- Encoded categorical variables using Label Encoding and One-Hot Encoding.
 
-### 4. Customer Segmentation
-- Grouped churn rates by `TenureGroup`
-- Estimated potential savings from retention
-- Built savings summary tables and visualizations
+## 📊 Exploratory Data Analysis
 
-### 5. Churn Prediction Models
-- Models used:
-  - Logistic Regression
-  - Decision Tree (GridSearchCV)
-  - Random Forest
-  - Calibrated Random Forest
-- Scaled features where needed
+- Churn distribution by gender, senior citizen status, tenure, and charges.
+- Boxplots and histograms for MonthlyCharges and TotalCharges.
+- Churn rates segmented by contract type and payment method.
 
-### 6. Model Evaluation
-- Metrics: Accuracy, Precision, Recall, F1 Score, AUC
-- Confusion Matrix breakdown
+## 👥 Customer Segmentation
+
+- Grouped customers by TenureGroup.
+- Estimated monthly and total savings from retention efforts.
+- Highlighted short-tenure customers (0–12 months) as high-risk churn group.
+
+## 🤖 Churn Prediction Model
+
+- Models: Logistic Regression, Decision Tree (GridSearchCV), Random Forest, Calibrated RF
+- Scaled features where required.
+- SHAP used for interpretability.
+
+## 📈 Model Evaluation
+
+- AUC, Accuracy, Precision, Recall, F1 Score
+- Confusion matrix breakdown
 - ROC and Precision-Recall curves
 - Threshold analysis for decision optimization
 
-### 7. SHAP Interpretability
-- Used SHAP to explain feature importance
-- Generated summary plots for top contributing features
+## 💡 Business Recommendations
 
-### 8. Business Recommendations
-- Focus retention on short-tenure customers (0–12 months)
-- Offer long-term contracts to reduce churn
-- Target high-paying customers with loyalty programs
-- Improve service quality for fiber/DSL users
+- Focus retention on short-tenure customers.
+- Offer long-term contracts to reduce churn.
+- Target high-charge customers with loyalty programs.
+- Improve service quality for fiber/DSL users.
+
+## 📊 Key Features
+
+- Cleaned and encoded customer data
+- Visualized churn patterns and savings potential
+- Trained Logistic Regression, Decision Tree, Random Forest, and Calibrated RF
+- Evaluated models using AUC, precision, recall, F1, and SHAP
+- Estimated savings by tenure group and retention rate
+- Created stakeholder-ready Excel dashboard
+
+## 📁 File Structure
+
+- Telco-Customer-Churn  (3).csv – Raw dataset
+- churn_analysis.ipynb – Main notebook with full workflow
+- Data_Preparation.ipynb – Modular script for cleaning and encoding
+- Exploratory_Data_Analysis_(EDA).ipynb – Script for generating plots
+- Customer_Segmentation.ipynb – Script for training and evaluating models
+- Churn_Prediction_Model.ipynb – Script for Models and Shap
+- Model_Evaluation.ipynb – Script for AUC, Accuracy, Precision, Recall, F1 Score, ROC and Precision-Recall curves
+- Business_Recommendationsipynb – Script for Recommendations
+- outputs/ – Contains plots and model reports
 
 ## 📦 Outputs
-| File | Description |
-|------|-------------|
-| `model_comparison.xlsx` | Model metrics summary |
-| `confusion_breakdown.xlsx` | Confusion matrix details |
-| `threshold_analysis.xlsx` | Threshold performance |
-| `combined_savings_summary.xlsx` | Retention savings estimates |
-| `dashboard_summary.xlsx` | Consolidated Excel dashboard with charts and recommendations |
 
-## 📈 Visuals
-- ROC Curve Comparison
-- Precision-Recall Curve
-- SHAP Summary Plot
-- Savings by Tenure Group
-- Model Performance Bar Chart
+- Excel dashboard: `dashboard_summary.xlsx`
+- Model summary, confusion matrix, threshold analysis
+- Savings summary, SHAP and performance charts
+- Business recommendations
 
-## 🧩 Dependencies
-```bash
-pandas
-numpy
-matplotlib
-seaborn
-shap
-scikit-learn
-openpyxl
+## 🧑 Author
+
+**Prepared by**: Jaskar Jeyabalan S
